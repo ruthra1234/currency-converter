@@ -1,16 +1,26 @@
-Currency converter
-Features:
-Angular 5
-ES6
-Typescript
-Webpack
+# Currency converter
 
-- Development setup
+## Features:
+- Angular 5
+- ES6
+- Typescript
+- Webpack
 
-1.Download and install NPM Package manager and Git
+#### - Development setup
 
-2.git clone https://github.com/ruthra1234/currency-converter.git
+1. `Download and install Node and NPM Package manager`
 
-3. Node and NPM install
+2. `Checkout source code from given location (git clone https://github.com/ruthra1234/currency-converter.git)`
 
-4.npm start
+3. `npm install`
+
+4. `npm start`
+
+5.`http://localhost:4200/`
+
+## Mobile View :
+
+![Mobile View](./assets/mobile.png)
+
+## Browser :
+![Browser](./assets/deskview.png)
