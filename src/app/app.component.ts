@@ -4,7 +4,7 @@ import { OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
-    selector: 'app-bulb-converter',
+    selector: 'app-currency-converter',
     templateUrl: './app.component.html',
    
     providers: [ CurrencyService ],

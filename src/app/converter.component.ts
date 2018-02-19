@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
 <div class="wrap">
-    <div class="floatleft"><app-bulb-converter>Loading Application...</app-bulb-converter></div>
+    <div class="floatleft"><app-currency-converter>Loading Application...</app-currency-converter></div>
      
-    <div class="floatright"><app-bulb-converter>Loading Application...</app-bulb-converter></div>
+    <div class="floatright"><app-currency-converter>Loading Application...</app-currency-converter></div>
     
 </div>
   
