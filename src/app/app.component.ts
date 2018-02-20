@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
 
     title: string = 'Currency converter';
     error: any = null;
-    fromAmount: number = 1;
-    toAmount: number = 0;
+    fromAmount: number = 1.0;
+    toAmount: number = 0.0;
     fromCurrency: string = null;
     toCurrency: string = null;
     rates: Array<any> = [];
@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
                     const items: Array<any> = this.parseData(response.rates);
                     items.push({id: 'EUR', value: 1});
                     this.rates = items;
-                    this.fromCurrency = this.rates[3].id;
-                    this.toCurrency = this.rates[30].id;
+                    this.fromCurrency = this.rates[0].id;
+                    this.toCurrency = this.rates[1].id;
                     this.convert(false, false);
                 }
 
@@ -62,6 +62,10 @@ export class AppComponent implements OnInit {
             }
         }
     }
+    
+    onlyNumberKey(event) {
+    return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57;
+}
 
     private parseData(data) {
         const arr: Array<any> = [];
@@ -72,7 +76,10 @@ export class AppComponent implements OnInit {
                     id: key,
                     value: data[key]
                 };
+                 if(key=='USD'||key=='CAD'|| key=='EUR'){
                 arr.push(obj);
+                }
+                
             }
         }
 
@@ -94,8 +101,10 @@ export class AppComponent implements OnInit {
 
         if (this.toCurrency === this.fromCurrency) {
             this.fromAmount = this.toAmount;
-            this.error = 'Converting ' + this.toCurrency + ' to ' + this.fromCurrency + ' doesn\'t make much sense';
+            this.error = 'Converting ' + this.toCurrency + ' to ' + this.fromCurrency + ' is not allowed';
             return;
         }
     }
+    
+    
 }

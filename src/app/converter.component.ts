@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 <div class="wrap">
     <div class="floatleft"><app-currency-converter>Loading Application...</app-currency-converter></div>
      
-    <div class="floatright"><app-currency-converter>Loading Application...</app-currency-converter></div>
+   
     
 </div>
   

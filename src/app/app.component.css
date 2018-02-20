@@ -40,16 +40,27 @@ h1 {
 }
 
 .border {
-	border: 2px solid black;
+	background-color: #f96302;
+	border: 1px solid black;
+	color: white;
+	font-size: 12px !important;
+	text-decoration: underline;
+	margin-left: 20px;
+	padding: 20px;
 }
 
 .text-align {
 	text-align: right;
+	margin-right: 15px;
+	color: #f96302 !important;
+	font-size: 11px !important;
+	font-weight: normal !important;
 }
 
 .convert-txt, .to {
 	display: inline-block;
 	text-align: left;
+	font-size: 15px !important;
 	padding: 10px 10px 10px 0;
 }
 

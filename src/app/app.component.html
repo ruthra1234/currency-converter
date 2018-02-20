@@ -8,13 +8,15 @@
     <div class="border"> 
     <h1>
        {{ title }}
+       <br>
     </h1>
     
+    <div class="margin-align">
     <div><span class="convert-txt" >Type in amount and select currency</span></div>
   
-    <input id="from-amount" type="number" [(ngModel)]="fromAmount" placeholder="0.00"  (ngModelChange)='calculate(false)'>
+    <input id="from-amount" autofocus type="number" [(ngModel)]="fromAmount" placeholder="0.00"   (keypress)="onlyNumberKey($event)" (ngModelChange)='calculate(false)'>
 
-    <select id="fromCurrency" [(ngModel)]="fromCurrency"  (ngModelChange)="convert(false, false)">
+    <select id="fromCurrency" [(ngModel)]="fromCurrency"  (ngModelChange)="convert(false, false)"> 
         <option *ngFor="let rate of rates" [value]="rate.id">{{ rate.id }}</option>
     </select>
 
@@ -29,8 +31,9 @@
     </select>
     
     <div class="text-align"><p>
-        <a target="_blank" href="https://www.majorexchangerates.com/">Disclaimer</a>
+        <a target="_blank" href="https://www.majorexchangerates.com/">Disclaimer</a> 
     </div>
+</div>
 </div>
 </div>
 
