@@ -8,6 +8,12 @@ html {
 	width: 100%;
 }
 
+span.link {
+	color: blue;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
 .floatleft, .floatright {
 	float: left;
 	margin-bottom: 5px;

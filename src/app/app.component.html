@@ -29,10 +29,8 @@
     <select id="toCurrency" [(ngModel)]="toCurrency" (ngModelChange)="calculate(true)">
         <option *ngFor="let rate of rates" [value]="rate.id">{{ rate.id }}</option>
     </select>
-    
-    <div class="text-align"><p>
-        <a target="_blank" href="https://www.majorexchangerates.com/">Disclaimer</a> 
-    </div>
+ 
+    <dialog-content></dialog-content>
 </div>
 </div>
 </div>
