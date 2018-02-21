@@ -25,4 +25,4 @@
 
 ## Browser :
 
-![Browser](./src/assets/deskview.png)
+![Browser](./src/assets/desk.png)
