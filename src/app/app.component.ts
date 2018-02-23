@@ -53,13 +53,30 @@ export class AppComponent implements OnInit {
 
     public calculate(reverse) {
         this.handleErrors();
-
+        
+        
+        if (this.toCurrency === this.fromCurrency) {
+          if (reverse) {
+            this.fromAmount = this.toAmount;
+            }
+            else{
+             this.toAmount=this.fromAmount;
+            }
+          
+        }
+        
+       else{
         if (!this.error) {
             if (reverse) {
+        
                 this.fromAmount = Math.round( this.toAmount / this.fromRates[this.toCurrency] * 100) / 100;
+                this.fromAmount= this.fromAmount.toFixed(2);
             } else {
+        
                 this.toAmount = Math.round(this.fromAmount * this.fromRates[this.toCurrency] * 100) / 100;
+                this.toAmount=this.toAmount.toFixed(2);
             }
+        }
         }
     }
     
@@ -98,12 +115,7 @@ export class AppComponent implements OnInit {
             this.error = 'Please set currency';
             return;
         }
-
-        if (this.toCurrency === this.fromCurrency) {
-            this.fromAmount = this.toAmount;
-            this.error = 'Converting ' + this.toCurrency + ' to ' + this.fromCurrency + ' is not allowed';
-            return;
-        }
+       
     }
     
     

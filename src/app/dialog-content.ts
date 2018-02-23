@@ -16,8 +16,8 @@ export class DialogContent {
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentDialog, {
 
-       height: '450px',
-       width: '600px'
+       height: '280px',
+       width: '500px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
