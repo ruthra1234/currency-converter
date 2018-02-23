@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
 
     title: string = 'Currency converter';
     error: any = null;
-    fromAmount: number = 1.0;
-    toAmount: number = 0.0;
+    fromAmount: number = 1.00;
+    toAmount: number = 0.00;
     fromCurrency: string = null;
     toCurrency: string = null;
     rates: Array<any> = [];
@@ -68,13 +68,21 @@ export class AppComponent implements OnInit {
        else{
         if (!this.error) {
             if (reverse) {
-        
+            
+             if(this.toAmount==null){
+                 this.toAmount=0.00;
+               }
                 this.fromAmount = Math.round( this.toAmount / this.fromRates[this.toCurrency] * 100) / 100;
-                this.fromAmount= this.fromAmount.toFixed(2);
+                 this.fromAmount= parseFloat(this.fromAmount.toFixed(2));
+               
             } else {
         
+             if(this.fromAmount==null){
+                 this.fromAmount=0.00;
+               }
                 this.toAmount = Math.round(this.fromAmount * this.fromRates[this.toCurrency] * 100) / 100;
-                this.toAmount=this.toAmount.toFixed(2);
+                  this.toAmount = parseFloat(this.toAmount.toFixed(2));
+                 
             }
         }
         }
@@ -106,10 +114,7 @@ export class AppComponent implements OnInit {
     private handleErrors() {
         this.error = null;
 
-        if (!this.fromAmount && !this.toAmount) {
-            this.error = 'Please enter the amount';
-            return;
-        }
+       
 
         if (!this.fromCurrency) {
             this.error = 'Please set currency';
