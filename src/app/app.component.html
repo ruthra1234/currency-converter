@@ -14,7 +14,8 @@
     <div class="margin-align">
     <div><span class="convert-txt" >Type in amount and select currency</span></div>
   
-    <input id="from-amount" autofocus type="number" [(ngModel)]="fromAmount"   placeholder=""  (ngModelChange)='calculate(false)'>
+    <input id="from-amount"  OnlyNumber="true" autofocus   [(ngModel)]="fromAmount" 
+      placeholder=""  (ngModelChange)='calculate(false)'>
 
     <select id="fromCurrency" [(ngModel)]="fromCurrency"  (ngModelChange)="convert(false, false)"> 
         <option *ngFor="let rate of rates" [value]="rate.id">{{ rate.id }}</option>
@@ -24,13 +25,20 @@
 
     <div><span class="to">Converted amount</span></div>
 
-    <input id="to-amount" type="number" [(ngModel)]="toAmount" placeholder=""  (ngModelChange)="calculate(true)">
+    <input id="to-amount" type="number" [disabled]="true"
+    
+    [(ngModel)]="toAmount" placeholder=""  (ngModelChange)="calculate(true)">
 
     <select id="toCurrency" [(ngModel)]="toCurrency" (ngModelChange)="calculate(true)">
         <option *ngFor="let rate of rates" [value]="rate.id">{{ rate.id }}</option>
     </select>
  
-    <dialog-content></dialog-content>
+   <!--  <dialog-content></dialog-content> -->
+   
+   <div class="text-align"><p>
+       <span class='link' (click)="openDialog()">Disclaimer</span>
+       
+   </div>
 </div>
 </div>
 </div>
