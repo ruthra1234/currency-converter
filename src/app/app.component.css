@@ -46,23 +46,22 @@ h1 {
 }
 
 .border {
-	background-color: #f96302;
+	 
 	border: 1px solid black;
-	color: white;
+	color: black;
 	font-size: 12px !important;
-	text-decoration: underline;
+	
 	margin-left: 20px;
 	padding: 20px;
 }
 
 .disclaimer {
-	background-color: #f96302;
 	
-	color: white;
-	font-size: 12px !important;
-	text-decoration: underline;
-	margin-left: 20px;
-	padding: 20px;
+	
+	color: black;
+	font-size: 13px !important;
+	
+
 }
 
 

@@ -11,20 +11,21 @@ import {MatDialog} from '@angular/material';
 })
 export class DialogContent {
   
-  constructor(public dialog: MatDialog) {}
-
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentDialog, {
-
-       height: '280px',
-       width: '500px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+  name:string;
+  showHide:bool;
+  
+ constructor() {
+    this.showHide = false;
   }
-}
+  
+ changeShowStatus(){
+    this.showHide = !this.showHide;
+  }
+
+ }
+
+
+
 
 @Component({
   selector: 'dialog-content-dialog',
