@@ -55,6 +55,18 @@ h1 {
 	padding: 20px;
 }
 
+.disclaimer {
+	background-color: #f96302;
+	
+	color: white;
+	font-size: 12px !important;
+	text-decoration: underline;
+	margin-left: 20px;
+	padding: 20px;
+}
+
+
+
 .text-align {
 	text-align: right;
 	margin-right: 15px;

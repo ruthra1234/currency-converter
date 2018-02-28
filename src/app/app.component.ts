@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
 
     title: string = 'Currency converter';
     error: any = null;
-    fromAmount: number = 1.00;
-    toAmount: number = 0.00;
+    fromAmount: string = '';
+    toAmount: string = '';
     fromCurrency: string = null;
     toCurrency: string = null;
     rates: Array<any> = [];
@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
 
             if (response.rates) {
                 if (initial) {
+               // alert("hi1");
                     const items: Array<any> = this.parseData(response.rates);
                     items.push({id: 'EUR', value: 1});
                     this.rates = items;
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
                     this.toCurrency = this.rates[1].id;
                     this.convert(false, false);
                 }
-
+ 
                 this.fromRates = response.rates;
 
                 this.calculate(reverse);
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
     public calculate(reverse) {
         this.handleErrors();
         
-        
+     //    alert("hi3");
         if (this.toCurrency === this.fromCurrency) {
           if (reverse) {
             this.fromAmount = this.toAmount;
@@ -68,20 +69,27 @@ export class AppComponent implements OnInit {
        else{
         if (!this.error) {
             if (reverse) {
-            
+          // alert(this.fromAmount+" "+this.toAmount+reverse);
+              this.fromAmount = String(Math.round( Number(this.toAmount) / this.fromRates[this.toCurrency] * 100) / 100);
+                // this.fromAmount= this.fromAmount;
              if(this.toAmount==null){
-                 this.toAmount=0.00;
+                 this.toAmount='';
+                  this.fromAmount='';
                }
-                this.fromAmount = Math.round( this.toAmount / this.fromRates[this.toCurrency] * 100) / 100;
-                 this.fromAmount= parseFloat(this.fromAmount.toFixed(2));
+              
                
             } else {
-        
-             if(this.fromAmount==null){
-                 this.fromAmount=0.00;
-               }
-                this.toAmount = Math.round(this.fromAmount * this.fromRates[this.toCurrency] * 100) / 100;
-                  this.toAmount = parseFloat(this.toAmount.toFixed(2));
+        // alert(this.fromAmount+"- "+this.toAmount+reverse);
+          if(this.fromAmount!=''){
+           this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
+                 // this.toAmount = this.toAmount;
+            
+             }
+             else{
+                 this.fromAmount='';
+                  this.toAmount='';
+             
+             }
                  
             }
         }
