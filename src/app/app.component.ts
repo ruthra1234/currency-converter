@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
 
             if (response.rates) {
                 if (initial) {
-               // alert("hi1");
+               
                     const items: Array<any> = this.parseData(response.rates);
                     items.push({id: 'EUR', value: 1});
                     this.rates = items;
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     public calculate(reverse) {
         this.handleErrors();
         
-     //    alert("hi3");
+     
         if (this.toCurrency === this.fromCurrency) {
           if (reverse) {
             this.fromAmount = this.toAmount;
@@ -69,9 +69,9 @@ export class AppComponent implements OnInit {
        else{
         if (!this.error) {
             if (reverse) {
-          // alert(this.fromAmount+" "+this.toAmount+reverse);
+         
               this.fromAmount = String(Math.round( Number(this.toAmount) / this.fromRates[this.toCurrency] * 100) / 100);
-                // this.fromAmount= this.fromAmount;
+               
              if(this.toAmount==null){
                  this.toAmount='';
                   this.fromAmount='';
@@ -79,11 +79,10 @@ export class AppComponent implements OnInit {
               
                
             } else {
-        // alert(this.fromAmount+"- "+this.toAmount+reverse);
+      
           if(this.fromAmount!=''){
            this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
-                 // this.toAmount = this.toAmount;
-            
+                         
              }
              else{
                  this.fromAmount='';
@@ -119,8 +118,6 @@ export class AppComponent implements OnInit {
 
     private handleErrors() {
         this.error = null;
-
-       
 
         if (!this.fromCurrency) {
             this.error = 'Please set currency';

@@ -6,8 +6,8 @@ import {MatDialog} from '@angular/material';
  */
 @Component({
   selector: 'dialog-content',
-  templateUrl: 'dialog-content.html',
-  styleUrls: ['dialog-data.css']
+  templateUrl: 'dialog-content.html'
+  
 })
 export class DialogContent {
   
