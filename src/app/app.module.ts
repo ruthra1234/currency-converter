@@ -9,22 +9,10 @@ import { OnlyNumber } from './onlynumber.directive';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DialogContent, DialogContentDialog} from './dialog-content';
-import { 
-  MatButtonModule,
-  MatDialogModule,
-  MatStepperModule
- 
-} from '@angular/material';
+import {DialogContent} from './dialog-content';
 
-@NgModule({
-  exports: [
-    MatButtonModule,
-    MatStepperModule,
-    MatDialogModule,
-  ]
-})
-export class DemoMaterialModule {}
+
+export class MaterialModule {}
 
 @NgModule({
 
@@ -33,12 +21,10 @@ export class DemoMaterialModule {}
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    HttpClientModule,
-    DemoMaterialModule,
+    HttpClientModule
     ],
-
-  entryComponents: [DialogContent, DialogContentDialog],
-  declarations: [ AppComponent,ConverterComponent,DialogContent, DialogContentDialog, OnlyNumber],
+    
+  declarations: [ AppComponent,ConverterComponent,DialogContent,OnlyNumber],
   bootstrap: [ConverterComponent,AppComponent],
   providers: []
 })

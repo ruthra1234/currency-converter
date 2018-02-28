@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {MatDialog} from '@angular/material';
 
-/**
- * @title Dialog with header, scrollable content and actions
- */
 @Component({
   selector: 'dialog-content',
   templateUrl: 'dialog-content.html'
@@ -12,7 +9,7 @@ import {MatDialog} from '@angular/material';
 export class DialogContent {
   
   name:string;
-  showHide:bool;
+  showHide:boolean;
   
  constructor() {
     this.showHide = false;
@@ -24,13 +21,5 @@ export class DialogContent {
 
  }
 
-
-
-
-@Component({
-  selector: 'dialog-content-dialog',
-  templateUrl: 'dialog-content-dialog.html',
-})
-export class DialogContentDialog {}
 
 
